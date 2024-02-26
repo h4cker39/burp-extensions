@@ -1,7 +1,9 @@
 # burp-extensions
 
 
-Projeto feito com Jython foi usado a lib requests 
+Projeto feito com Jython para usar-la precisa baixar o projeto do site official: https://www.jython.org/
+  
+  Tambem foi usado a lib requests então seria importante importar-la
   java -jar jython-standalone-2.7.2.jar -m ensurepip
   java -jar jython-standalone-2.7.2.jar -m ensure pip upgrade --pip
   java -jar jython-standalone-2.7.2.jar -m ensure pip install requests
