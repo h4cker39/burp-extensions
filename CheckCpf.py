@@ -23,16 +23,15 @@ class BurpExtender(IBurpExtender, IHttpListener):
         #buscando
         padrao = re.findall(pattern, resposta)
         padrao2 = re.findall(pattern2, resposta)
-        if padrao:
+        if padrao or padrao2:
             for i in padrao:
-                #valida se é realmente um cpf:
-                check_cpf(i)
+                #check_cpf(i)
                 self.callbacks.printOutput(self.helpers.bytesToString(messageInfo.getRequest()))
         else:
             print("Error: No response available.")
     cpf_completo = [0] * 11
   
-    def valida10(cpf_completo, restante):
+  def valida10(cpf_completo, restante):
             novo_cpf = cpf_completo
             print("NOVO CPF AQUI")
             print(novo_cpf)
@@ -56,7 +55,7 @@ class BurpExtender(IBurpExtender, IHttpListener):
             resultado = ''.join(array)
             print(resultado)
             return resultado
-    def valida9(soma, cpf):
+  def valida9(soma, cpf):
         cpf_complete = [char for char in cpf]
         restante = soma % 11
 
@@ -67,7 +66,7 @@ class BurpExtender(IBurpExtender, IHttpListener):
 
         return CheckCpf.valida10(cpf_complete, restante)
 
-    def validarCpf(cpf):
+  def validarCpf(cpf):
         digitos_convertidos = []
         for char in cpf:
             if char.isdigit():
@@ -80,7 +79,7 @@ class BurpExtender(IBurpExtender, IHttpListener):
             main[i] = novos_digitos[i] * primeiros_nove[i]
         return CheckCpf.valida9(sum(main), cpf)
 
-    def check_cpf(cpf):
+  def check_cpf(cpf):
             new_cpf = cpf[:-2]
             vart = validarCpf(str(new_cpf))
             if vart == cpf:
