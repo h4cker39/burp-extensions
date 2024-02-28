@@ -21,7 +21,8 @@ O Desenho no qual criado, entry point, exit points, assests, m-processes, proces
  Pontos de atencao:
 
  Um dos principais pontos encontrados na aba findings da planilha anexo, também fica sob componentes não mapeados, como ausencia de autenticacao, controles de acessos, ausencias de logs e etc conforme nos findings do relatório anexo:
-O arquivo do desenho foi executado no draw.io pois uso Linux motivo no qual não fiz no Microsoft Threat Modeling Tool, é eu sei, é triste, não fiz dual boot pois ia gastar meu tempo a mais pra fazer o desafio, coisa que eu não tenho, enfim
+ 
+O arquivo do desenho foi executado no draw.io pois uso Linux motivo no qual não fiz no Microsoft Threat Modeling Tool, é eu sei, é triste, não fiz dual boot pois ia gastar mais tempo pra fazer o desafio, coisa que eu não tenho.
 
 ![Captura de Tela 2024-02-28 às 14 53 31](https://github.com/h4cker39/burp-extensions/assets/14226200/852d56b7-2307-4b3b-8e75-272a8d39f3b3)
 
