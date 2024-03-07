@@ -9,13 +9,14 @@ Projeto feito com Jython para usar-la precisa baixar o projeto do site official:
   java -jar jython-standalone-2.7.2.jar -m ensure pip upgrade --pip
   java -jar jython-standalone-2.7.2.jar -m ensure pip install requests
   ```
-  
+
   
 
 ConvertGet.py Converte reqs de POST com parametros para GET com parametros e envia req, caso responda com 200 ele informa caso contrário informa que não houve sucesso:
 #REQUISICAO COM POST 
 
-<img width="1311" alt="Captura de Tela 2024-02-26 às 17 37 28" src="https://github.com/h4cker39/burp-extensions/assets/14226200/1cf6463e-e02e-46fd-8242-8ff440adac5d">
+ ![Captura de Tela 2024-03-07 às 17 54 58](https://github.com/h4cker39/burp-extensions/assets/14226200/3973b190-fe12-446b-a532-f05771066880)
+
 
 
 #RESPOSTA JA TRANSFORMADO COM STATUS 200 CASO SEJA VULNERAVEL
