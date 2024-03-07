@@ -44,24 +44,6 @@ class BurpExtender(IBurpExtender, IProxyListener, IHttpListener):
             parameters = self.helpers.analyzeRequest(messageInfo.getRequest()).getParameters()
             r = self.makeGetWithParams(url_burp, parameters)
 
-    def getTabCaption(self):
-        return "Convert Post Req to Get"
-
-
-    def getUiComponent(self):
-        x =10 
-        y = 10
-
-        panel = Panel()
-        panel.setLayout(None)
-        self.pyld_lbl = JLabel("Exeuction")
-        self.pyld_lbl.setBounds(x,y,80,20)
-
-        self.payload = JTextArea()
-        self.pyld_scrl = JScrollPane(self.payload)
-        self.pyld_scrl.setBounds(x + 100, y, 200, 20)
-        panel.add(self.pyld_scrl)
-        return panel
         
 
         
