@@ -12,6 +12,7 @@ from burp import IHttpListener
 from burp import IHttpService
 from urllib import urlencode
 from burp import IParameter
+from burp import IRequestInfo
 import requests
 #By Luis Giordano @Fr0$ty
 #Foi me pedido com urgencia então visualmente não inclui mais nada.
@@ -36,13 +37,15 @@ class BurpExtender(IBurpExtender, IProxyListener, IHttpListener):
         callbacks.setExtensionName("Convert POST parameters to GET")
         callbacks.registerHttpListener(self)
 
-    def processHttpMessage(self, toolFlag, messageIsRequest, messageInfo):
-        requester = self.helpers.analyzeRequest(messageInfo)
-        if requester.getMethod() == "POST":
-            analyzed_request = self.helpers.analyzeRequest(messageInfo)
-            url_burp = analyzed_request.getUrl()
-            parameters = self.helpers.analyzeRequest(messageInfo.getRequest()).getParameters()
-            r = self.makeGetWithParams(url_burp, parameters)
+    def processHttpMessage(self, toolFlag, messageIsRequest, messageInfo):  
+            requester = self.helpers.analyzeRequest(messageInfo)
+            only_header = "application/x-www-form-urlencoded"
+            dec = only_header in self.helpers.bytesToString(messageInfo.getRequest())
+            if requester.getMethod() == "POST" and dec:                                                                          
+                analyzed_request = self.helpers.analyzeRequest(messageInfo)
+                url_burp = analyzed_request.getUrl()
+                parameters = self.helpers.analyzeRequest(messageInfo.getRequest()).getParameters()
+                r = self.makeGetWithParams(url_burp, parameters)
 
         
 
