@@ -20,7 +20,8 @@ ConvertGet.py Converte reqs de POST com parametros para GET com parametros e env
 
 
 #RESPOSTA JA TRANSFORMADO COM STATUS 200 CASO SEJA VULNERAVEL
-<img width="1322" alt="Captura de Tela 2024-02-26 às 17 37 04" src="https://github.com/h4cker39/burp-extensions/assets/14226200/ac8c61bb-f34c-4b82-845d-ea1236ccc919">
+
+![Captura de Tela 2024-03-11 às 15 29 59](https://github.com/h4cker39/burp-extensions/assets/14226200/63ad1d46-f61e-4020-9851-531d3a2190b8)
 
 
 
