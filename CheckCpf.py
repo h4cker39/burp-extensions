@@ -15,23 +15,28 @@ class BurpExtender(IBurpExtender, IHttpListener):
     resposta = messageInfo.getResponse()
     if resposta:
         resposta = self.helpers.bytesToString(resposta)
+        # A regex ja elimina possibilidade de ataque e na funcao de valida cpf remove caracter invalido
         pattern = r'\b\d{3}\.\d{3}\.\d{3}-\d{2}\b'
         pattern2 = r'\b\d{11}\b'
         padrao = re.findall(pattern, resposta)
         padrao2 = re.findall(pattern2, resposta)
         if padrao or padrao2:
             for i in padrao:
-                print(self.validar_cpf(i))
-                self.callbacks.printOutput(self.helpers.bytesToString(messageInfo.getResponse()))
+                if self.validar_cpf(i) is True:
+                    self.callbacks.printOutput("CPF encontrados na req abaixo")
+                    self.callbacks.printOutput(self.helpers.bytesToString(messageInfo.getResponse()))
             #segunda opcao para a Regex
             for i in padrao2:
-                print(self.validar_cpf(i))
-                self.callbacks.printOutput(self.helpers.bytesToString(messageInfo.getResponse()))
+                if self.validar_cpf(i) is True:
+                     self.callbacks.printOutput("CPF encontrados na req abaixo")
+                     self.callbacks.printOutput(self.helpers.bytesToString(messageInfo.getResponse()))
         else:
                 self.callbacks.printOutput(self.helpers.bytesToString(""))
-#funcao que valida cpf - reprogramado pra ficar melhor e mais funcional
+#funcao que valida cpf
   @staticmethod
   def validar_cpf(cpf):
+    cpf = cpf.replace('-','')
+    cpf = cpf.replace('.','')
     cpf = ''.join(filter(unicode.isdigit, cpf))
     if len(cpf) != 11:
         return False
