@@ -14,6 +14,7 @@ Projeto feito com Jython para usar-la precisa baixar o projeto do site official:
 
 ConvertGet.py Converte reqs de POST com parametros para GET com parametros e envia req, caso responda com 200 ele informa caso contrário informa que não houve sucesso:
 #REQUISICAO COM POST 
+[UPDATES] Itens de sec, melhorias de performance, qualidade e boas práticas adcionados, havia um bug no projeto que fazia a query de forma errada, então isto foi ajustado tambem.
 
  ![Captura de Tela 2024-03-07 às 17 54 58](https://github.com/h4cker39/burp-extensions/assets/14226200/3973b190-fe12-446b-a532-f05771066880)
 
@@ -25,15 +26,12 @@ ConvertGet.py Converte reqs de POST com parametros para GET com parametros e env
 
 
 
-
-#CHECK FOR PII
+#CHECK FOR CPF
 
 CheckCpf.py projeto que checa por PII mais especifico para CPF, sendo assim ele retorna caso encontre algum dado de CPF e valida se o cpf é verdadeiro.
+[UPDATES] Itens de sec, melhorias de performance, qualidade e boas práticas adcionados, um bug inerente a detection de cpf também foi validado.
 
-
-<img width="1311" alt="Captura de Tela 2024-02-26 às 17 31 07" src="https://github.com/h4cker39/burp-extensions/assets/14226200/2b636345-4a27-4654-9516-ed1560a11796">
-
-
+![Captura de Tela 2024-03-11 às 16 03 15](https://github.com/h4cker39/burp-extensions/assets/14226200/40338046-69e9-459c-8bb4-d6b5f82790bf)
 
   
 
