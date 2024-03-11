@@ -29,7 +29,7 @@ ConvertGet.py Converte reqs de POST com parametros para GET com parametros e env
 #CHECK FOR CPF
 
 CheckCpf.py projeto que checa por PII mais especifico para CPF, sendo assim ele retorna caso encontre algum dado de CPF e valida se o cpf é verdadeiro.
-[UPDATES] Itens de sec, melhorias de performance, qualidade e boas práticas adcionados, um bug inerente a detection de cpf também foi validado.
+[UPDATES] Itens de sec, melhorias de performance, qualidade e boas práticas adcionados, um bug inerente a detection de cpf também foi inseridos.
 
 ![Captura de Tela 2024-03-11 às 16 03 15](https://github.com/h4cker39/burp-extensions/assets/14226200/40338046-69e9-459c-8bb4-d6b5f82790bf)
 
