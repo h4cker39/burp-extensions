@@ -5,7 +5,6 @@ from burp import ITab
 from burp import IProxyListener
 from java.awt import Panel
 from java.io import PrintWriter
-from javax.swing import JScrollPane, JTextArea, JLabel
 from threading import Thread
 from burp import IHttpRequestResponse
 from burp import IHttpListener
